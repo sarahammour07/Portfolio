@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Sarah Ammour</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Remplacer tous les liens "projects" par "skills"
+    document.querySelectorAll('a[href="#projects"]').forEach(link => {
+        link.setAttribute('href', '#skills');
+    });
+});
+</script>
+
+<body>
+    <!-- Section Hero -->
+    <section class="hero">
+        <!-- Navigation intégrée -->
+        <nav class="hero-nav">
+            <div class="nav-container">
+                <a href="#" class="nav-logo"></a>
+                <div class="nav-menu">
+                    <a href="#" class="nav-link active">Accueil</a>
+                    <a href="#about" class="nav-link">À propos</a>
+                    <a href="#skills" class="nav-link">Compétences</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Contenu Hero -->
+        <div class="hero-content">
+            <h1 class="accueil">
+                <span class="highlight">Jeune développeuse</span>
+                <span class="highlight-accent">prête à relever vos défis digitaux</span>
+            </h1>
+            <p class="hero-description">Apprenti développeuse passionnée, je crée des expériences web innovantes et performantes.</p>
+            <a href="#projects" class="cta-button">Explorer mes projets</a>
+        </div>
+    </section>
+
+    <!-- Section À propos -->
+    <section class="about">
+        <div class="about-container">
+            <div class="about-image-wrapper">
+                <img src="profile.jpg" alt="Sarah Ammour" class="about-image">
+                <div class="image-decoration"></div>
+            </div>
+            
+            <div class="about-content">
+                <h2 class="about-title">
+                    <span id="about" class="title-accent" style="scroll-margin-top: 100px; scroll-behavior: smooth;">À propos </span>
+                </h2>
+                
+                <div class="about-text">
+                    <p class="about-description">Je m'appelle Sarah et bien que débutante dans le domaine, je suis passionnée par la création de sites à la fois beaux et fonctionnels. Ce portfolio est le reflet de mon travail et de mon évolution, où je mets en avant mes projets, mes compétences, et mon envie de continuer à apprendre. Curieuse et motivée, je cherche à m'impliquer dans des projets concrets et à évoluer dans un environnement dynamique et collaboratif !
+
+                    </p>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-number">1+</span>
+                            <span class="highlight-label">Années d'expérience</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-number">15+</span>
+                            <span class="highlight-label">Projets réalisés</span>
+                        </div>
+                    </div>
+
+                    <div class="about-cta">
+                        <a href="cv.pdf" class="download-cv">Télécharger mon CV </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Section Compétences -->
+    <section class="skills">
+        <div class="skills-container">
+            <h2 class="skills-title">
+                <span id="skills" class="title-accent" style="scroll-margin-top: 100px;">Mes Compétences</span>
+            </h2>
+            <p class="skills-subtitle" style="max-width: 800px; margin: 0 auto; font-size: 1.3rem; text-align: center; padding: 2rem 0;">
+                Découvrez mes compétences en développement web à travers différents projets scolaires et personnels. En cliquant sur chaque icône, vous pourrez explorer mes travaux et voir comment j'applique ces compétences dans des projets concrets.
+                N'hésitez pas à jeter un œil et à découvrir ce que j'ai accompli !
+
+            </p>
+
+            </p>
+
+            <div class="skills-carousel-container">
+                <div class="skills-track">
+                    <!-- Premier groupe -->
+                    <div class="skills-group">
+                        <div class="skill-item">
+                            <i class="fab fa-js"></i>
+                            <img src="assets/javascript.png" alt="JavaScript">
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <img src="assets/html.png" alt="HTML">
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <img src="assets/css.png" alt="CSS">
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-java"></i>
+                            <img src="assets/java.png" alt="Java">
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <img src="assets/python.png" alt="Python">
+                        </div>
+                    </div>
+
+                    <!-- Deuxième groupe (dupliqué pour l'animation continue) -->
+                    <div class="skills-group">
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <img src="assets/sql.png" alt="SQL">
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-wordpress"></i>
+                            <img src="assets/webflow.png" alt="Webflow">
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-palette"></i>
+                            <img src="assets/canva.png" alt="Canva">
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-file-excel"></i>
+                            <img src="assets/excel.png" alt="Excel">
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-linux"></i>
+                            <img src="linux-logo.png" alt="Linux">
+                        </div>
+                    </div>
+
+                    <!-- Répétition du premier groupe pour une transition fluide -->
+                    <div class="skills-group">
+                        <div class="skill-item">
+                            <i class="fab fa-js"></i>
+                            <img src="js-logo.png" alt="JavaScript">
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <img src="html5-logo.png" alt="HTML">
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <img src="css3-logo.png" alt="CSS">
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-java"></i>
+                            <img src="java-logo.png" alt="Java">
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <img src="python-logo.png" alt="Python">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="project-modal" id="projectModal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2 class="modal-title">Projets</h2>
+                <div class="project-list" id="projectList">
+                    <!-- Les projets seront injectés ici dynamiquement -->
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .project-modal {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(19, 17, 28, 0.95);
+                backdrop-filter: blur(5px);
+            }
+
+            .modal-content {
+                background: linear-gradient(135deg, #13111C 0%, #1F1B2E 100%);
+                margin: 10% auto;
+                padding: 2rem;
+                border: 1px solid rgba(139, 92, 246, 0.2);
+                border-radius: 15px;
+                width: 80%;
+                max-width: 800px;
+                position: relative;
+                box-shadow: 0 4px 20px rgba(139, 92, 246, 0.2);
+            }
+
+            .close-modal {
+                color: #9CA3AF;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: color 0.3s ease;
+            }
+
+            .close-modal:hover {
+                color: #8B5CF6;
+            }
+
+            .modal-title {
+                color: #8B5CF6;
+                font-size: 2rem;
+                margin-bottom: 2rem;
+                text-align: center;
+            }
+
+            .project-list {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .project-item {
+                background: rgba(255, 255, 255, 0.05);
+                padding: 1.5rem;
+                border-radius: 10px;
+                transition: transform 0.3s ease;
+            }
+
+            .project-item:hover {
+                transform: translateY(-5px);
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+            .project-item h3 {
+                color: #fff;
+                margin-bottom: 1rem;
+            }
+
+            .project-item p {
+                color: #9CA3AF;
+                margin-bottom: 1rem;
+            }
+
+            .project-link {
+                display: inline-block;
+                padding: 0.5rem 1rem;
+                background: linear-gradient(to right, #ccc1ed, #8B5CF6);
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: transform 0.3s ease;
+            }
+
+            .project-link:hover {
+                transform: translateY(-2px);
+            }
+        </style>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const modal = document.getElementById('projectModal');
+                const closeBtn = document.querySelector('.close-modal');
+                const projectList = document.getElementById('projectList');
+                const skillItems = document.querySelectorAll('.skill-item');
+
+                // Création d'un effet de grille animée en arrière-plan
+                const skillsSection = document.querySelector('.skills');
+                const canvas = document.createElement('canvas');
+                canvas.style.position = 'absolute';
+                canvas.style.top = '0';
+                canvas.style.left = '0';
+                canvas.style.width = '100%';
+                canvas.style.height = '100%';
+                canvas.style.opacity = '0.2';
+                canvas.style.pointerEvents = 'none';
+                skillsSection.style.position = 'relative';
+                skillsSection.insertBefore(canvas, skillsSection.firstChild);
+
+                const ctx = canvas.getContext('2d');
+                const gridSize = 30;
+                let time = 0;
+
+                function resizeCanvas() {
+                    canvas.width = skillsSection.offsetWidth;
+                    canvas.height = skillsSection.offsetHeight;
+                }
+
+                resizeCanvas();
+                window.addEventListener('resize', resizeCanvas);
+
+                function drawGrid() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.strokeStyle = '#8B5CF6';
+                    ctx.lineWidth = 0.5;
+
+                    for (let x = 0; x < canvas.width; x += gridSize) {
+                        for (let y = 0; y < canvas.height; y += gridSize) {
+                            ctx.beginPath();
+                            
+                            // Effet d'ondulation
+                            const distX = Math.sin(y * 0.01 + time * 0.002) * 5;
+                            const distY = Math.cos(x * 0.01 + time * 0.002) * 5;
+                            
+                            ctx.moveTo(x + distX, y + distY);
+                            ctx.lineTo(x + gridSize + distX, y + distY);
+                            ctx.lineTo(x + gridSize + distX, y + gridSize + distY);
+                            ctx.lineTo(x + distX, y + gridSize + distY);
+                            ctx.closePath();
+                            
+                            // Gradient de couleur dynamique
+                            const gradient = ctx.createLinearGradient(x, y, x + gridSize, y + gridSize);
+                            gradient.addColorStop(0, `rgba(139, 92, 246, ${Math.abs(Math.sin(time * 0.001 + x * 0.01)) * 0.2})`);
+                            gradient.addColorStop(1, `rgba(167, 139, 250, ${Math.abs(Math.cos(time * 0.001 + y * 0.01)) * 0.2})`);
+                            
+                            ctx.strokeStyle = gradient;
+                            ctx.stroke();
+                        }
+                    }
+                    time++;
+                    requestAnimationFrame(drawGrid);
+                }
+
+                drawGrid();
+
+                const projects = {
+                    'Python': [
+                        {
+                            title: 'Projet Python',
+                            description: 'Description du projet Python',
+                            pdfLink: 'path/to/python-project.pdf'
+                        }
+                    ],
+                    'JavaScript': [
+                        {
+                            title: 'Projet JavaScript',
+                            description: 'Description du projet JavaScript',
+                            pdfLink: 'path/to/js-project.pdf'
+                        }
+                    ],
+                    // Ajoutez d'autres langages et projets ici
+                };
+
+                skillItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        const alt = item.querySelector('img').alt;
+                        showProjects(alt);
+                    });
+
+                    // Animation améliorée au survol
+                    item.addEventListener('mouseenter', function() {
+                        this.style.transform = 'scale(1.15) rotate(5deg)';
+                        this.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                        this.style.boxShadow = '0 10px 20px rgba(139, 92, 246, 0.3)';
+                        this.style.background = 'rgba(255, 255, 255, 0.15)';
+                    });
+
+                    item.addEventListener('mouseleave', function() {
+                        this.style.transform = 'scale(1) rotate(0)';
+                        this.style.boxShadow = 'none';
+                        this.style.background = 'rgba(255, 255, 255, 0.05)';
+                    });
+                });
+
+                function showProjects(language) {
+                    const languageProjects = projects[language] || [];
+                    projectList.innerHTML = '';
+
+                    if (languageProjects.length === 0) {
+                        projectList.innerHTML = `<p style="color: #9CA3AF; text-align: center; grid-column: 1/-1;">Aucun projet disponible pour ${language}</p>`;
+                    } else {
+                        languageProjects.forEach(project => {
+                            projectList.innerHTML += `
+                                <div class="project-item">
+                                    <h3>${project.title}</h3>
+                                    <p>${project.description}</p>
+                                    <a href="${project.pdfLink}" class="project-link" target="_blank">Voir le projet</a>
+                                </div>
+                            `;
+                        });
+                    }
+
+                    modal.style.display = 'block';
+                }
+
+                closeBtn.onclick = function() {
+                    modal.style.display = 'none';
+                }
+
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = 'none';
+                    }
+                }
+            });
+        </script>
+
+        <script src="nav.js"></script>
+        <script src="particles.js"></script>
+        <script src="script.js"></script>
+        
