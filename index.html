@@ -410,6 +410,147 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         </script>
+        
+        <section class="contact" id="contact">
+            <div class="contact-container">
+                <h2 class="contact-title">
+                    <span class="title-accent" style="scroll-margin-top: 100px; scroll-behavior: smooth;">Contactez-moi !</span>
+                </h2>
+                
+                <div class="contact-card" data-aos="slide-right">
+                    <div class="contact-content">
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <a href="tel:+33761287652" class="contact-link">
+                                <span class="contact-label">Téléphone : </span>
+                                <span class="contact-value">07 61 28 76 52</span>
+                            </a>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <a href="mailto:sarahammour628@gmail.com" class="contact-link">
+                                <span class="contact-label">Email : </span>
+                                <span class="contact-value">sarahammour628@gmail.com</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-decoration"></div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .contact {
+                padding: 6rem 2rem;
+                background: linear-gradient(135deg, #13111C 0%, #1F1B2E 100%);
+                min-height: 50vh;
+                display: flex;
+                align-items: center;
+            }
+
+            .contact-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                width: 100%;
+            }
+
+            .contact-title {
+                text-align: center;
+                margin-bottom: 4rem;
+                font-size: 2.5rem;
+                color: #fff;
+            }
+
+            .contact-card {
+                background: rgba(255, 255, 255, 0.05);
+                backdrop-filter: blur(10px);
+                border-radius: 20px;
+                padding: 3rem;
+                position: relative;
+                overflow: hidden;
+                max-width: 600px;
+                margin: 0 auto;
+                transform: translateX(-100%);
+                animation: slideIn 1s forwards;
+                box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+                border: 1px solid rgba(255, 255, 255, 0.18);
+            }
+
+            .contact-content {
+                position: relative;
+                z-index: 1;
+            }
+
+            .contact-item {
+                display: flex;
+                align-items: center;
+                margin-bottom: 2rem;
+                transition: transform 0.3s ease;
+            }
+
+            .contact-item:last-child {
+                margin-bottom: 0;
+            }
+
+            .contact-item:hover {
+                transform: translateX(10px);
+            }
+
+            .contact-icon {
+                font-size: 1.5rem;
+                color: #8B5CF6;
+                margin-right: 1.5rem;
+            }
+
+            .contact-link {
+                text-decoration: none;
+                color: #fff;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .contact-label {
+                font-size: 0.9rem;
+                color: #8B5CF6;
+                margin-bottom: 0.3rem;
+            }
+
+            .contact-value {
+                font-size: 1.1rem;
+            }
+
+            .card-decoration {
+                position: absolute;
+                top: -50%;
+                right: -50%;
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+                transform: rotate(45deg);
+            }
+
+            @keyframes slideIn {
+                to {
+                    transform: translateX(0);
+                }
+            }
+
+            @media (max-width: 768px) {
+                .contact {
+                    padding: 4rem 1rem;
+                }
+
+                .contact-card {
+                    padding: 2rem;
+                }
+
+                .contact-title {
+                    font-size: 2rem;
+                }
+            }
+        </style>
+        
 
         <script src="nav.js"></script>
         <script src="particles.js"></script>
