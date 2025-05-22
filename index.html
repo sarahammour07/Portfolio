@@ -39,10 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
         <!-- Contenu Hero -->
         <div class="hero-content">
             <h1 class="accueil">
-            <span class="highlight">Votre webmaster pour booster</span>
-            <span class="highlight-accent">votre transformation numérique</span>            
+                <span class="highlight">Votre webmaster pour booster</span>
+                <span class="highlight-accent">votre transformation numérique</span>
             </h1>
-            <p class="hero-description">Apprenti développeuse passionnée, je crée des expériences web innovantes et performantes.</p>
+            <p class="hero-description">Apprenti développeuse passionnée, collaborez avec moi pour créer des sites web innovants et performants !</p>
             <a href="#projects" class="cta-button">Explorer mes projets</a>
         </div>
     </section>
@@ -51,10 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
     <section class="about">
         <div class="about-container">
             <div class="about-image-wrapper">
-                <img src= "assets/photocv.png" alt="Sarah Ammour" class="about-image">
+                <img src="assets/cv.png" alt="Sarah Ammour" class="about-image">
                 <div class="image-decoration"></div>
             </div>
-            
             <div class="about-content">
                 <h2 class="about-title">
                     <span id="about" class="title-accent" style="scroll-margin-top: 100px; scroll-behavior: smooth;">À propos </span>
@@ -105,23 +104,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="skills-group">
                         <div class="skill-item">
                             <i class="fab fa-js"></i>
-                            <img src="assets/javascript.png" alt="JavaScript">
+                            <img src="./assets/javascript.png" alt="JavaScript">
                         </div>
                         <div class="skill-item">
                             <i class="fab fa-html5"></i>
-                            <img src="assets/html.png" alt="HTML">
+                            <img src="./assets/html.png" alt="HTML">
                         </div>
                         <div class="skill-item">
                             <i class="fab fa-css3-alt"></i>
-                            <img src="assets/css.png" alt="CSS">
+                            <img src="./assets/css.png" alt="CSS">
                         </div>
                         <div class="skill-item">
                             <i class="fab fa-java"></i>
-                            <img src="assets/java.png" alt="Java">
+                            <img src="./assets/java.png" alt="Java">
                         </div>
                         <div class="skill-item">
                             <i class="fab fa-python"></i>
-                            <img src="assets/python.png" alt="Python">
+                            <img src="./assets/python.png" alt="Python">
                         </div>
                     </div>
 
@@ -129,23 +128,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="skills-group">
                         <div class="skill-item">
                             <i class="fas fa-database"></i>
-                            <img src="assets/sql.png" alt="SQL">
+                            <img src="./assets/sql.png" alt="SQL">
                         </div>
                         <div class="skill-item">
                             <i class="fab fa-wordpress"></i>
-                            <img src="assets/webflow.png" alt="Webflow">
+                            <img src="./assets/webflow.png" alt="Webflow">
                         </div>
                         <div class="skill-item">
                             <i class="fas fa-palette"></i>
-                            <img src="assets/canva.png" alt="Canva">
+                            <img src="./assets/canva.png" alt="Canva">
                         </div>
                         <div class="skill-item">
                             <i class="fas fa-file-excel"></i>
-                            <img src="assets/excel.png" alt="Excel">
+                            <img src="./assets/excel.png" alt="Excel">
                         </div>
                         <div class="skill-item">
                             <i class="fab fa-linux"></i>
-                            <img src="linux-logo.png" alt="Linux">
+                            <img src="./assets/linux.png" alt="Linux">
                         </div>
                     </div>
 
@@ -153,23 +152,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="skills-group">
                         <div class="skill-item">
                             <i class="fab fa-js"></i>
-                            <img src="js-logo.png" alt="JavaScript">
+                            <img src="./assets/javascript.png" alt="JavaScript">
                         </div>
                         <div class="skill-item">
                             <i class="fab fa-html5"></i>
-                            <img src="html5-logo.png" alt="HTML">
+                            <img src="./assets/html.png" alt="HTML">
                         </div>
                         <div class="skill-item">
                             <i class="fab fa-css3-alt"></i>
-                            <img src="css3-logo.png" alt="CSS">
+                            <img src="./assets/css.png" alt="CSS">
                         </div>
                         <div class="skill-item">
                             <i class="fab fa-java"></i>
-                            <img src="java-logo.png" alt="Java">
+                            <img src="./assets/java.png" alt="Java">
                         </div>
                         <div class="skill-item">
                             <i class="fab fa-python"></i>
-                            <img src="python-logo.png" alt="Python">
+                            <img src="./assets/python.png" alt="Python">
                         </div>
                     </div>
                 </div>
@@ -339,7 +338,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 drawGrid();
 
-            
+                const projects = {
+                    'Python': [
+                        {
+                            title: 'Projet Python',
+                            description: 'Description du projet Python',
+                            pdfLink: 'path/to/python-project.pdf'
+                        }
+                    ],
+                    'JavaScript': [
+                        {
+                            title: 'Projet JavaScript',
+                            description: 'Description du projet JavaScript',
+                            pdfLink: 'path/to/js-project.pdf'
+                        }
+                    ],
+                    // Ajoutez d'autres langages et projets ici
+                };
+
                 skillItems.forEach(item => {
                     item.addEventListener('click', function() {
                         const alt = item.querySelector('img').alt;
@@ -361,10 +377,39 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 });
 
-                
-                
+                function showProjects(language) {
+                    const languageProjects = projects[language] || [];
+                    projectList.innerHTML = '';
+
+                    if (languageProjects.length === 0) {
+                        projectList.innerHTML = `<p style="color: #9CA3AF; text-align: center; grid-column: 1/-1;">Aucun projet disponible pour ${language}</p>`;
+                    } else {
+                        languageProjects.forEach(project => {
+                            projectList.innerHTML += `
+                                <div class="project-item">
+                                    <h3>${project.title}</h3>
+                                    <p>${project.description}</p>
+                                    <a href="${project.pdfLink}" class="project-link" target="_blank">Voir le projet</a>
+                                </div>
+                            `;
+                        });
+                    }
+
+                    modal.style.display = 'block';
+                }
+
+                closeBtn.onclick = function() {
+                    modal.style.display = 'none';
+                }
+
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = 'none';
+                    }
+                }
+            });
         </script>
-        
+
         <section class="contact" id="contact">
             <div class="contact-container">
                 <h2 class="contact-title">
@@ -504,8 +549,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         </style>
-        
-
+    
         <script src="nav.js"></script>
         <script src="particles.js"></script>
         <script src="script.js"></script>
