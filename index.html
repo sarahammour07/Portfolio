@@ -9,7 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Ajout du preload pour les ressources critiques -->
+    <link rel="preload" href="assets/cv.png" as="image">
+    <link rel="preload" href="assets/javascript.png" as="image">
+    <link rel="preload" href="assets/html.png" as="image">
+    <link rel="preload" href="assets/css.png" as="image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -21,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <body>
+    <canvas id="particles-bg"></canvas>
     <!-- Section Hero -->
     <section class="hero">
         <!-- Navigation intégrée -->
@@ -39,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <!-- Contenu Hero -->
         <div class="hero-content">
             <h1 class="accueil">
-                <span class="highlight">Votre webmaster pour booster</span>
+                <span class="highlight">Votre webmaster pour booster </span>
                 <span class="highlight-accent">votre transformation numérique</span>
             </h1>
             <p class="hero-description">Apprenti développeuse passionnée, collaborez avec moi pour créer des sites web innovants et performants !</p>
@@ -51,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <section class="about">
         <div class="about-container">
             <div class="about-image-wrapper">
-                <img src="assets/cv.png" alt="Sarah Ammour" class="about-image">
+                <img src="assets/photocv.png" alt="Sarah Ammour" class="about-image" loading="lazy">
                 <div class="image-decoration"></div>
             </div>
             <div class="about-content">
@@ -99,78 +106,43 @@ document.addEventListener('DOMContentLoaded', () => {
             </p>
 
             <div class="skills-carousel-container">
-                <div class="skills-track">
-                    <!-- Premier groupe -->
-                    <div class="skills-group">
-                        <div class="skill-item">
-                            <i class="fab fa-js"></i>
-                            <img src="./assets/javascript.png" alt="JavaScript">
+                <div class="swiper skills-swiper">
+                    <div class="swiper-wrapper">
+                        
+                        <div class="swiper-slide skill-item">
+                            <img src="./assets/html5.png" alt="HTML" loading="lazy"> 
                         </div>
-                        <div class="skill-item">
-                            <i class="fab fa-html5"></i>
-                            <img src="./assets/html.png" alt="HTML">
+                        <div class="swiper-slide skill-item">
+                            <img src="./assets/css-3.png" alt="CSS" loading="lazy">
                         </div>
-                        <div class="skill-item">
-                            <i class="fab fa-css3-alt"></i>
-                            <img src="./assets/css.png" alt="CSS">
+                        <div class="swiper-slide skill-item">
+                            <img src="./assets/javascript-logo.png" alt="JavaScript" loading="lazy">
                         </div>
-                        <div class="skill-item">
-                            <i class="fab fa-java"></i>
-                            <img src="./assets/java.png" alt="Java">
+                        <div class="swiper-slide skill-item">
+                            <img src="./assets/java-.png" alt="Java" loading="lazy">
                         </div>
-                        <div class="skill-item">
-                            <i class="fab fa-python"></i>
-                            <img src="./assets/python.png" alt="Python">
+                        <div class="swiper-slide skill-item">
+                            <img src="./assets/python.png" alt="Python" loading="lazy">
                         </div>
-                    </div>
-
-                    <!-- Deuxième groupe (dupliqué pour l'animation continue) -->
-                    <div class="skills-group">
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <img src="./assets/sql.png" alt="SQL">
+                        <div class="swiper-slide skill-item">
+                            <img src="./assets/mysql.png" alt="SQL" loading="lazy">
                         </div>
-                        <div class="skill-item">
-                            <i class="fab fa-wordpress"></i>
-                            <img src="./assets/webflow.png" alt="Webflow">
+                        <div class="swiper-slide skill-item">
+                            <img src="./assets/webflow.png" alt="Webflow" loading="lazy">
                         </div>
-                        <div class="skill-item">
-                            <i class="fas fa-palette"></i>
-                            <img src="./assets/canva.png" alt="Canva">
+                        <div class="swiper-slide skill-item">
+                            <img src="./assets/canva.png" alt="Canva" loading="lazy">
                         </div>
-                        <div class="skill-item">
-                            <i class="fas fa-file-excel"></i>
-                            <img src="./assets/excel.png" alt="Excel">
+                        <div class="swiper-slide skill-item">
+                            <img src="./assets/excel-svg.png" alt="Excel" loading="lazy">
                         </div>
-                        <div class="skill-item">
-                            <i class="fab fa-linux"></i>
-                            <img src="./assets/linux.png" alt="Linux">
+                        <div class="swiper-slide skill-item">
+                            <img src="./assets/linux-tux.png" alt="Linux" loading="lazy">
                         </div>
                     </div>
-
-                    <!-- Répétition du premier groupe pour une transition fluide -->
-                    <div class="skills-group">
-                        <div class="skill-item">
-                            <i class="fab fa-js"></i>
-                            <img src="./assets/javascript.png" alt="JavaScript">
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-html5"></i>
-                            <img src="./assets/html.png" alt="HTML">
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-css3-alt"></i>
-                            <img src="./assets/css.png" alt="CSS">
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-java"></i>
-                            <img src="./assets/java.png" alt="Java">
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-python"></i>
-                            <img src="./assets/python.png" alt="Python">
-                        </div>
-                    </div>
+                    <!-- Flèches custom -->
+                    <div class="swiper-button-prev"><svg class="arrow-svg" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="18,6 10,14 18,22" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <div class="swiper-button-next"><svg class="arrow-svg" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="10,6 18,14 10,22" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
                 </div>
             </div>
         </div>
@@ -184,100 +156,11 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         </div>
 
-        <style>
-            .project-modal {
-                display: none;
-                position: fixed;
-                z-index: 1000;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(19, 17, 28, 0.95);
-                backdrop-filter: blur(5px);
-            }
-
-            .modal-content {
-                background: linear-gradient(135deg, #13111C 0%, #1F1B2E 100%);
-                margin: 10% auto;
-                padding: 2rem;
-                border: 1px solid rgba(139, 92, 246, 0.2);
-                border-radius: 15px;
-                width: 80%;
-                max-width: 800px;
-                position: relative;
-                box-shadow: 0 4px 20px rgba(139, 92, 246, 0.2);
-            }
-
-            .close-modal {
-                color: #9CA3AF;
-                float: right;
-                font-size: 28px;
-                font-weight: bold;
-                cursor: pointer;
-                transition: color 0.3s ease;
-            }
-
-            .close-modal:hover {
-                color: #8B5CF6;
-            }
-
-            .modal-title {
-                color: #8B5CF6;
-                font-size: 2rem;
-                margin-bottom: 2rem;
-                text-align: center;
-            }
-
-            .project-list {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 1.5rem;
-            }
-
-            .project-item {
-                background: rgba(255, 255, 255, 0.05);
-                padding: 1.5rem;
-                border-radius: 10px;
-                transition: transform 0.3s ease;
-            }
-
-            .project-item:hover {
-                transform: translateY(-5px);
-                background: rgba(255, 255, 255, 0.1);
-            }
-
-            .project-item h3 {
-                color: #fff;
-                margin-bottom: 1rem;
-            }
-
-            .project-item p {
-                color: #9CA3AF;
-                margin-bottom: 1rem;
-            }
-
-            .project-link {
-                display: inline-block;
-                padding: 0.5rem 1rem;
-                background: linear-gradient(to right, #ccc1ed, #8B5CF6);
-                color: white;
-                text-decoration: none;
-                border-radius: 5px;
-                transition: transform 0.3s ease;
-            }
-
-            .project-link:hover {
-                transform: translateY(-2px);
-            }
-        </style>
-
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 const modal = document.getElementById('projectModal');
                 const closeBtn = document.querySelector('.close-modal');
                 const projectList = document.getElementById('projectList');
-                const skillItems = document.querySelectorAll('.skill-item');
 
                 // Création d'un effet de grille animée en arrière-plan
                 const skillsSection = document.querySelector('.skills');
@@ -293,7 +176,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 skillsSection.insertBefore(canvas, skillsSection.firstChild);
 
                 const ctx = canvas.getContext('2d');
-                const gridSize = 30;
                 let time = 0;
 
                 function resizeCanvas() {
@@ -305,38 +187,49 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.addEventListener('resize', resizeCanvas);
 
                 function drawGrid() {
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    ctx.strokeStyle = '#8B5CF6';
-                    ctx.lineWidth = 0.5;
+                    // Optimisation : Réduire la fréquence de rafraîchissement
+                    if (!document.hidden && time % 2 === 0) {
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        ctx.strokeStyle = '#8B5CF6';
+                        ctx.lineWidth = 0.5;
 
-                    for (let x = 0; x < canvas.width; x += gridSize) {
-                        for (let y = 0; y < canvas.height; y += gridSize) {
-                            ctx.beginPath();
-                            
-                            // Effet d'ondulation
-                            const distX = Math.sin(y * 0.01 + time * 0.002) * 5;
-                            const distY = Math.cos(x * 0.01 + time * 0.002) * 5;
-                            
-                            ctx.moveTo(x + distX, y + distY);
-                            ctx.lineTo(x + gridSize + distX, y + distY);
-                            ctx.lineTo(x + gridSize + distX, y + gridSize + distY);
-                            ctx.lineTo(x + distX, y + gridSize + distY);
-                            ctx.closePath();
-                            
-                            // Gradient de couleur dynamique
-                            const gradient = ctx.createLinearGradient(x, y, x + gridSize, y + gridSize);
-                            gradient.addColorStop(0, `rgba(139, 92, 246, ${Math.abs(Math.sin(time * 0.001 + x * 0.01)) * 0.2})`);
-                            gradient.addColorStop(1, `rgba(167, 139, 250, ${Math.abs(Math.cos(time * 0.001 + y * 0.01)) * 0.2})`);
-                            
-                            ctx.strokeStyle = gradient;
-                            ctx.stroke();
+                        // Optimisation : Réduire la densité de la grille
+                        const gridSize = 40;
+                        const maxX = Math.min(canvas.width, 1200);
+                        const maxY = Math.min(canvas.height, 800);
+
+                        for (let x = 0; x < maxX; x += gridSize) {
+                            for (let y = 0; y < maxY; y += gridSize) {
+                                const distX = Math.sin(y * 0.005 + time * 0.001) * 3;
+                                const distY = Math.cos(x * 0.005 + time * 0.001) * 3;
+                                
+                                ctx.beginPath();
+                                ctx.moveTo(x + distX, y + distY);
+                                ctx.lineTo(x + gridSize + distX, y + distY);
+                                ctx.lineTo(x + gridSize + distX, y + gridSize + distY);
+                                ctx.lineTo(x + distX, y + gridSize + distY);
+                                ctx.closePath();
+                                
+                                const opacity = 0.1 + Math.abs(Math.sin(time * 0.0005)) * 0.1;
+                                ctx.strokeStyle = `rgba(139, 92, 246, ${opacity})`;
+                                ctx.stroke();
+                            }
                         }
                     }
                     time++;
                     requestAnimationFrame(drawGrid);
                 }
 
-                drawGrid();
+                // Optimisation : Gérer la visibilité de la page
+                document.addEventListener('visibilitychange', () => {
+                    if (document.hidden) {
+                        cancelAnimationFrame(animationFrameId);
+                    } else {
+                        animationFrameId = requestAnimationFrame(drawGrid);
+                    }
+                });
+
+                let animationFrameId = requestAnimationFrame(drawGrid);
 
                 const projects = {
                     'Python': [
@@ -355,27 +248,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     ],
                     // Ajoutez d'autres langages et projets ici
                 };
-
-                skillItems.forEach(item => {
-                    item.addEventListener('click', function() {
-                        const alt = item.querySelector('img').alt;
-                        showProjects(alt);
-                    });
-
-                    // Animation améliorée au survol
-                    item.addEventListener('mouseenter', function() {
-                        this.style.transform = 'scale(1.15) rotate(5deg)';
-                        this.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-                        this.style.boxShadow = '0 10px 20px rgba(139, 92, 246, 0.3)';
-                        this.style.background = 'rgba(255, 255, 255, 0.15)';
-                    });
-
-                    item.addEventListener('mouseleave', function() {
-                        this.style.transform = 'scale(1) rotate(0)';
-                        this.style.boxShadow = 'none';
-                        this.style.background = 'rgba(255, 255, 255, 0.05)';
-                    });
-                });
 
                 function showProjects(language) {
                     const languageProjects = projects[language] || [];
@@ -410,147 +282,91 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         </script>
 
-        <section class="contact" id="contact">
-            <div class="contact-container">
-                <h2 class="contact-title">
-                    <span class="title-accent" style="scroll-margin-top: 100px; scroll-behavior: smooth;">Contactez-moi !</span>
-                </h2>
-                
-                <div class="contact-card" data-aos="slide-right">
-                    <div class="contact-content">
-                        <div class="contact-item">
-                            <i class="fas fa-phone contact-icon"></i>
-                            <a href="tel:+33761287652" class="contact-link">
-                                <span class="contact-label">Téléphone : </span>
-                                <span class="contact-value">07 61 28 76 52</span>
-                            </a>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <i class="fas fa-envelope contact-icon"></i>
-                            <a href="mailto:sarahammour628@gmail.com" class="contact-link">
-                                <span class="contact-label">Email : </span>
-                                <span class="contact-value">sarahammour628@gmail.com</span>
-                            </a>
-                        </div>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="nav.js" defer></script>
+        <script src="particles.js" defer></script>
+        <script src="script.js" defer></script>
+        
+    </section>
+
+    <!-- Section Contact moderne -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h2 class="contact-section-title">Contactez-moi</h2>
+        </div>
+        <div class="contact-wrapper">
+            <div class="contact-form-block">
+                <h2 class="contact-title">Envoyer un message</h2>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" name="name" placeholder="Votre nom" required>
                     </div>
-                    <div class="card-decoration"></div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Votre email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
+                    </div>
+                    <button type="submit" class="contact-submit">Envoyer</button>
+                </form>
+            </div>
+            <div class="contact-infos-block">
+                <h3 class="infos-title">Mes coordonnées</h3>
+                <ul class="contact-infos-list">
+                    <li class="contact-info-item">
+                        <span class="contact-info-icon"><i class="fas fa-envelope"></i></span>
+                        <span class="infos-label">Email :</span>
+                        <a href="mailto:sarahammour628@gmail.com">sarahammour628@gmail.com</a>
+                    </li>
+                    <li class="contact-info-item">
+                        <span class="contact-info-icon"><i class="fas fa-phone"></i></span>
+                        <span class="infos-label">Téléphone :</span>
+                        <a href="tel:+33761287652">07 61 28 76 52</a>
+                    </li>
+                    <li class="contact-info-item">
+                        <span class="contact-info-icon"><i class="fab fa-linkedin"></i></span>
+                        <span class="infos-label">LinkedIn :</span>
+                        <a href="https://www.linkedin.com/in/sarah-ammour/" target="_blank">Sarah Ammour</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-brand-block">
+                <div class="footer-logo">SA</div>
+                <div class="footer-slogan">Ensemble, donnons vie à vos projets web.</div>
+                <div class="footer-year">Sarah Ammour, 2024.</div>
+            </div>
+            <div class="footer-links-blocks">
+                <div class="footer-links-col">
+                    <div class="footer-links-title">Portfolio</div>
+                    <a href="#about">À propos</a>
+                    <a href="#skills">Compétences</a>
+                    <a href="#projects">Projets</a>
+                </div>
+                <div class="footer-links-col">
+                    <div class="footer-links-title">Contact</div>
+                    <a href="#contact">Formulaire</a>
+                    <a href="mailto:sarahammour628@gmail.com">Email</a>
+                    <a href="tel:+33761287652">Téléphone</a>
+                </div>
+                <div class="footer-links-col">
+                    <div class="footer-links-title">Réseaux</div>
+                    <a href="https://www.linkedin.com/in/sarah-ammour/" target="_blank">LinkedIn</a>
+                    <!-- Ajoute d'autres liens si besoin -->
                 </div>
             </div>
-        </section>
-
-        <style>
-            .contact {
-                padding: 6rem 2rem;
-                background: linear-gradient(135deg, #13111C 0%, #1F1B2E 100%);
-                min-height: 50vh;
-                display: flex;
-                align-items: center;
-            }
-
-            .contact-container {
-                max-width: 1200px;
-                margin: 0 auto;
-                width: 100%;
-            }
-
-            .contact-title {
-                text-align: center;
-                margin-bottom: 4rem;
-                font-size: 2.5rem;
-                color: #fff;
-            }
-
-            .contact-card {
-                background: rgba(255, 255, 255, 0.05);
-                backdrop-filter: blur(10px);
-                border-radius: 20px;
-                padding: 3rem;
-                position: relative;
-                overflow: hidden;
-                max-width: 600px;
-                margin: 0 auto;
-                transform: translateX(-100%);
-                animation: slideIn 1s forwards;
-                box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-                border: 1px solid rgba(255, 255, 255, 0.18);
-            }
-
-            .contact-content {
-                position: relative;
-                z-index: 1;
-            }
-
-            .contact-item {
-                display: flex;
-                align-items: center;
-                margin-bottom: 2rem;
-                transition: transform 0.3s ease;
-            }
-
-            .contact-item:last-child {
-                margin-bottom: 0;
-            }
-
-            .contact-item:hover {
-                transform: translateX(10px);
-            }
-
-            .contact-icon {
-                font-size: 1.5rem;
-                color: #8B5CF6;
-                margin-right: 1.5rem;
-            }
-
-            .contact-link {
-                text-decoration: none;
-                color: #fff;
-                display: flex;
-                flex-direction: column;
-            }
-
-            .contact-label {
-                font-size: 0.9rem;
-                color: #8B5CF6;
-                margin-bottom: 0.3rem;
-            }
-
-            .contact-value {
-                font-size: 1.1rem;
-            }
-
-            .card-decoration {
-                position: absolute;
-                top: -50%;
-                right: -50%;
-                width: 100%;
-                height: 100%;
-                background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
-                transform: rotate(45deg);
-            }
-
-            @keyframes slideIn {
-                to {
-                    transform: translateX(0);
-                }
-            }
-
-            @media (max-width: 768px) {
-                .contact {
-                    padding: 4rem 1rem;
-                }
-
-                .contact-card {
-                    padding: 2rem;
-                }
-
-                .contact-title {
-                    font-size: 2rem;
-                }
-            }
-        </style>
-    
-        <script src="nav.js"></script>
-        <script src="particles.js"></script>
-        <script src="script.js"></script>
+        </div>
+        <div class="footer-bottom-bar">
+            <span class="footer-copyright">© 2024 Sarah Ammour. Tous droits réservés.</span>
+        </div>
+    </footer>
+</body>
+</html>
         
