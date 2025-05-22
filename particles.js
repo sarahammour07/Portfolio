@@ -30,50 +30,35 @@ class Particle {
 
 class ParticleEffect {
     constructor() {
-        this.canvas = document.createElement('canvas');
+        this.canvas = document.getElementById('particles-bg');
         this.ctx = this.canvas.getContext('2d');
         this.particles = [];
         this.numberOfParticles = 150;
-        
-        this.init();
+        this.resize();
+        this.initParticles();
         this.animate();
-        
         window.addEventListener('resize', () => this.resize());
     }
 
-    init() {
-        const hero = document.querySelector('.hero');
-        this.canvas.classList.add('particle-canvas');
-        hero.insertBefore(this.canvas, hero.firstChild);
-        
-        this.canvas.style.position = 'absolute';
-        this.canvas.style.top = '0';
-        this.canvas.style.left = '0';
-        this.canvas.style.width = '100%';
-        this.canvas.style.height = '100%';
-        this.canvas.style.pointerEvents = 'none';
-        
-        this.resize();
-
+    initParticles() {
+        this.particles = [];
         for (let i = 0; i < this.numberOfParticles; i++) {
             this.particles.push(new Particle(this.canvas));
         }
     }
 
     resize() {
-        const hero = document.querySelector('.hero');
-        this.canvas.width = hero.offsetWidth;
-        this.canvas.height = hero.offsetHeight;
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+        this.initParticles();
     }
 
     animate() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        
         this.particles.forEach(particle => {
             particle.update();
             particle.draw();
         });
-        
         requestAnimationFrame(() => this.animate());
     }
 }
