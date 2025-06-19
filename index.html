@@ -91,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     </section>
 
+   
     <!-- Section Compétences -->
     <section class="skills">
         <div class="skills-container">
@@ -100,45 +101,122 @@ document.addEventListener('DOMContentLoaded', () => {
             <p class="skills-subtitle" style="max-width: 800px; margin: 0 auto; font-size: 1.3rem; text-align: center; padding: 2rem 0;">
                 Découvrez mes compétences en développement web à travers différents projets scolaires et personnels. En cliquant sur chaque icône, vous pourrez explorer mes travaux et voir comment j'applique ces compétences dans des projets concrets.
                 N'hésitez pas à jeter un œil et à découvrir ce que j'ai accompli !
-
-            </p>
-
             </p>
 
             <div class="skills-carousel-container">
                 <div class="swiper skills-swiper">
                     <div class="swiper-wrapper">
-                        
+                        <!-- Chaque icône est maintenant un lien vers un PDF, avec effet brillance au clic -->
                         <div class="swiper-slide skill-item">
-                            <img src="./assets/html5.png" alt="HTML" loading="lazy"> 
+                            <a href="htmlprojets.pdf" class="skill-link" target="_blank" data-lang="HTML">
+                                <img src="./assets/html5.png" alt="HTML" loading="lazy">
+                            </a>
                         </div>
                         <div class="swiper-slide skill-item">
-                            <img src="./assets/css-3.png" alt="CSS" loading="lazy">
+                            <a href="cssprojets.pdf" class="skill-link" target="_blank" data-lang="CSS">
+                                <img src="./assets/css-3.png" alt="CSS" loading="lazy">
+                            </a>
                         </div>
                         <div class="swiper-slide skill-item">
-                            <img src="./assets/javascript-logo.png" alt="JavaScript" loading="lazy">
+                            <a href="javascriptprojets.pdf" class="skill-link" target="_blank" data-lang="JavaScript">
+                                <img src="./assets/javascript-logo.png" alt="JavaScript" loading="lazy">
+                            </a>
                         </div>
                         <div class="swiper-slide skill-item">
-                            <img src="./assets/java-.png" alt="Java" loading="lazy">
+                            <a href="javaprojets.pdf" class="skill-link" target="_blank" data-lang="Java">
+                                <img src="./assets/java-.png" alt="Java" loading="lazy">
+                            </a>
                         </div>
                         <div class="swiper-slide skill-item">
-                            <img src="./assets/python.png" alt="Python" loading="lazy">
+                            <a href="pythonprojets.pdf" class="skill-link" target="_blank" data-lang="Python">
+                                <img src="./assets/python.png" alt="Python" loading="lazy">
+                            </a>
                         </div>
                         <div class="swiper-slide skill-item">
-                            <img src="./assets/mysql.png" alt="SQL" loading="lazy">
+                            <a href="sqlprojets.pdf" class="skill-link" target="_blank" data-lang="SQL">
+                                <img src="./assets/mysql.png" alt="SQL" loading="lazy">
+                            </a>
                         </div>
                         <div class="swiper-slide skill-item">
-                            <img src="./assets/webflow.png" alt="Webflow" loading="lazy">
+                            <a href="webflow.jpg" class="skill-link" target="_blank" data-lang="Webflow">
+                                <img src="./assets/webflow.png" alt="Webflow" loading="lazy">
+                            </a>
                         </div>
                         <div class="swiper-slide skill-item">
-                            <img src="./assets/canva.png" alt="Canva" loading="lazy">
+                            <a href="canva.pdf" class="skill-link" target="_blank" data-lang="Canva">
+                                <img src="./assets/canva.png" alt="Canva" loading="lazy">
+                            </a>
                         </div>
                         <div class="swiper-slide skill-item">
-                            <img src="./assets/excel-svg.png" alt="Excel" loading="lazy">
+                            <a href="excelprojets.pdf" class="skill-link" target="_blank" data-lang="Excel">
+                                <img src="./assets/excel-svg.png" alt="Excel" loading="lazy">
+                            </a>
                         </div>
                         <div class="swiper-slide skill-item">
-                            <img src="./assets/linux-tux.png" alt="Linux" loading="lazy">
+                            <a href="linuxprojets.pdf" class="skill-link" target="_blank" data-lang="Linux">
+                                <img src="./assets/linux-tux.png" alt="Linux" loading="lazy">
+                            </a>
                         </div>
+                        <script>
+                        // Ajoute l'effet brillance animé au clic sur chaque icône
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const skillLinks = document.querySelectorAll('.skill-link');
+                            // Crée un élément de luminosité en arrière-plan
+                            function createGlowBg(link) {
+                                // Vérifie si un glow-bg existe déjà
+                                if (link.parentElement.querySelector('.glow-bg')) return;
+                                const glowBg = document.createElement('div');
+                                glowBg.className = 'glow-bg';
+                                // Positionne le glow-bg derrière le lien
+                                glowBg.style.position = 'absolute';
+                                glowBg.style.top = 0;
+                                glowBg.style.left = 0;
+                                glowBg.style.width = '100%';
+                                glowBg.style.height = '100%';
+                                glowBg.style.zIndex = 0;
+                                glowBg.style.pointerEvents = 'none';
+                                glowBg.style.borderRadius = '16px';
+                                glowBg.style.background = 'radial-gradient(circle at 50% 50%, rgba(139,92,246,0.35) 0%, rgba(255,255,255,0.18) 60%, transparent 100%)';
+                                glowBg.style.opacity = '0.85';
+                                glowBg.style.transition = 'opacity 0.3s';
+                                // Place le glow-bg dans le skill-item (parent du lien)
+                                link.parentElement.style.position = 'relative';
+                                link.parentElement.insertBefore(glowBg, link);
+                                // Animation de disparition
+                                setTimeout(() => {
+                                    glowBg.style.opacity = '0';
+                                    setTimeout(() => {
+                                        if (glowBg.parentElement) glowBg.parentElement.removeChild(glowBg);
+                                    }, 400);
+                                }, 700);
+                            }
+
+                            skillLinks.forEach(link => {
+                                link.addEventListener('mousedown', function(e) {
+                                    link.classList.add('glow');
+                                    createGlowBg(link);
+                                });
+                                link.addEventListener('mouseup', function(e) {
+                                    setTimeout(() => {
+                                        link.classList.remove('glow');
+                                    }, 700);
+                                });
+                                link.addEventListener('mouseleave', function(e) {
+                                    link.classList.remove('glow');
+                                });
+                                // Pour accessibilité (clavier)
+                                link.addEventListener('keydown', function(e) {
+                                    if (e.key === "Enter" || e.key === " ") {
+                                        link.classList.add('glow');
+                                        createGlowBg(link);
+                                        setTimeout(() => {
+                                            link.classList.remove('glow');
+                                        }, 700);
+                                    }
+                                });
+                            });
+                        });
+                        </script>
                     </div>
                     <!-- Flèches custom -->
                     <div class="swiper-button-prev"><svg class="arrow-svg" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="18,6 10,14 18,22" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -146,23 +224,81 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
         </div>
-        <div class="project-modal" id="projectModal">
-            <div class="modal-content">
-                <span class="close-modal">&times;</span>
-                <h2 class="modal-title">Projets</h2>
-                <div class="project-list" id="projectList">
-                    <!-- Les projets seront injectés ici dynamiquement -->
-                </div>
-            </div>
-        </div>
+        <script>
+        // Ajoute l'effet brillance au survol (hover) de chaque icône
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.skill-link').forEach(function(link) {
+                link.addEventListener('mouseenter', function() {
+                    link.classList.add('glow');
+                });
+                link.addEventListener('mouseleave', function() {
+                    link.classList.remove('glow');
+                });
+            });
+        });
+        </script>
+
+        <!-- Ajout du style pour l'effet brillance -->
+        <style>
+            .skill-link {
+                display: inline-block;
+                border-radius: 16px;
+                transition: box-shadow 0.3s, filter 0.3s;
+                position: relative;
+                overflow: hidden;
+            }
+            .skill-link img {
+                display: block;
+                width: 80px;
+                height: 80px;
+                object-fit: contain;
+                border-radius: 16px;
+                transition: filter 0.3s;
+            }
+            .skill-link.glow {
+                box-shadow: 0 0 24px 8px #fff, 0 0 40px 12px #8B5CF6;
+                filter: brightness(1.2) drop-shadow(0 0 8px #fff);
+                z-index: 2;
+            }
+            .skill-link::after {
+                content: "";
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: linear-gradient(120deg, rgba(255,255,255,0.2) 0%, rgba(139,92,246,0.25) 100%);
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s;
+            }
+            .skill-link.glow::after {
+                opacity: 1;
+                animation: shine 0.7s linear;
+            }
+            @keyframes shine {
+                0% { transform: translateX(-100%) rotate(25deg); opacity: 0.5;}
+                60% { opacity: 1;}
+                100% { transform: translateX(100%) rotate(25deg); opacity: 0;}
+            }
+        </style>
 
         <script>
+            // Effet brillance au clic sur chaque icône
             document.addEventListener('DOMContentLoaded', function() {
-                const modal = document.getElementById('projectModal');
-                const closeBtn = document.querySelector('.close-modal');
-                const projectList = document.getElementById('projectList');
+                // Brillance sur les icônes
+                document.querySelectorAll('.skill-link').forEach(function(link) {
+                    link.addEventListener('click', function(e) {
+                        // Effet brillance
+                        link.classList.add('glow');
+                        setTimeout(function() {
+                            link.classList.remove('glow');
+                        }, 600);
+                        // Laisse la redirection s'effectuer (target="_blank")
+                    });
+                });
 
-                // Création d'un effet de grille animée en arrière-plan
+                // Création d'un effet de grille animée en arrière-plan (inchangé)
                 const skillsSection = document.querySelector('.skills');
                 const canvas = document.createElement('canvas');
                 canvas.style.position = 'absolute';
@@ -187,13 +323,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.addEventListener('resize', resizeCanvas);
 
                 function drawGrid() {
-                    // Optimisation : Réduire la fréquence de rafraîchissement
                     if (!document.hidden && time % 2 === 0) {
                         ctx.clearRect(0, 0, canvas.width, canvas.height);
                         ctx.strokeStyle = '#8B5CF6';
                         ctx.lineWidth = 0.5;
-
-                        // Optimisation : Réduire la densité de la grille
                         const gridSize = 40;
                         const maxX = Math.min(canvas.width, 1200);
                         const maxY = Math.min(canvas.height, 800);
@@ -202,14 +335,12 @@ document.addEventListener('DOMContentLoaded', () => {
                             for (let y = 0; y < maxY; y += gridSize) {
                                 const distX = Math.sin(y * 0.005 + time * 0.001) * 3;
                                 const distY = Math.cos(x * 0.005 + time * 0.001) * 3;
-                                
                                 ctx.beginPath();
                                 ctx.moveTo(x + distX, y + distY);
                                 ctx.lineTo(x + gridSize + distX, y + distY);
                                 ctx.lineTo(x + gridSize + distX, y + gridSize + distY);
                                 ctx.lineTo(x + distX, y + gridSize + distY);
                                 ctx.closePath();
-                                
                                 const opacity = 0.1 + Math.abs(Math.sin(time * 0.0005)) * 0.1;
                                 ctx.strokeStyle = `rgba(139, 92, 246, ${opacity})`;
                                 ctx.stroke();
@@ -220,7 +351,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     requestAnimationFrame(drawGrid);
                 }
 
-                // Optimisation : Gérer la visibilité de la page
                 document.addEventListener('visibilitychange', () => {
                     if (document.hidden) {
                         cancelAnimationFrame(animationFrameId);
@@ -230,55 +360,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 let animationFrameId = requestAnimationFrame(drawGrid);
-
-                const projects = {
-                    'Python': [
-                        {
-                            title: 'Projet Python',
-                            description: 'Description du projet Python',
-                            pdfLink: 'path/to/python-project.pdf'
-                        }
-                    ],
-                    'JavaScript': [
-                        {
-                            title: 'Projet JavaScript',
-                            description: 'Description du projet JavaScript',
-                            pdfLink: 'path/to/js-project.pdf'
-                        }
-                    ],
-                    // Ajoutez d'autres langages et projets ici
-                };
-
-                function showProjects(language) {
-                    const languageProjects = projects[language] || [];
-                    projectList.innerHTML = '';
-
-                    if (languageProjects.length === 0) {
-                        projectList.innerHTML = `<p style="color: #9CA3AF; text-align: center; grid-column: 1/-1;">Aucun projet disponible pour ${language}</p>`;
-                    } else {
-                        languageProjects.forEach(project => {
-                            projectList.innerHTML += `
-                                <div class="project-item">
-                                    <h3>${project.title}</h3>
-                                    <p>${project.description}</p>
-                                    <a href="${project.pdfLink}" class="project-link" target="_blank">Voir le projet</a>
-                                </div>
-                            `;
-                        });
-                    }
-
-                    modal.style.display = 'block';
-                }
-
-                closeBtn.onclick = function() {
-                    modal.style.display = 'none';
-                }
-
-                window.onclick = function(event) {
-                    if (event.target == modal) {
-                        modal.style.display = 'none';
-                    }
-                }
             });
         </script>
 
